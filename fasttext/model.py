@@ -61,6 +61,7 @@ class SupervisedModel(object):
 
     def predict(self, texts, k=1):
         all_labels = []
+	texts = filter(None,texts)
         for text in texts:
             if text[-1] != '\n':
                 text += '\n'
@@ -71,6 +72,7 @@ class SupervisedModel(object):
 
     def predict_proba(self, texts, k=1):
         results = []
+	texts = filter(None,texts)
         for text in texts:
             if text[-1] != '\n':
                 text += '\n'
